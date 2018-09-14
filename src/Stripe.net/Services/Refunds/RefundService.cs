@@ -6,7 +6,10 @@
     using System.Threading.Tasks;
     using Stripe.Infrastructure;
 
-    public class RefundService : StripeService
+    public class RefundService : StripeService,
+        IListable<Refund, RefundListOptions>,
+        IRetrievable<Refund>,
+        IUpdatable<Refund, RefundUpdateOptions>
     {
         public RefundService()
             : base(null)

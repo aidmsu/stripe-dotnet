@@ -6,7 +6,9 @@
     using System.Threading.Tasks;
     using Stripe.Infrastructure;
 
-    public class FileUploadService : StripeService
+    public class FileUploadService : StripeService,
+        IListable<FileUpload, FileUploadListOptions>,
+        IRetrievable<FileUpload>
     {
         public FileUploadService()
             : base(null)
